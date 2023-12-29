@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Đọc từng người dùng từ file /data/usr.txt
+for user in $(cat /data/usr.txt)
+do
+    # Kiểm tra xem người dùng đã tồn tại trong hệ thống hay chưa
+    if id "$user" >/dev/null 2>&1; then
+        echo "Người dùng $user đã tồn tại."
+    else
+        # Tạo người dùng với mật khẩu là "12345678"
+        useradd -m -p $(openssl passwd -1 "12345678") "$user"
+        
+        # Tạo thư mục /data/[user] và thiết lập quyền trên thư mục
+        mkdir "/data/$user"
+        chmod 755 "/data/$user"
+        
+        # Thiết lập quyền read, write, execute cho những người dùng còn lại trong danh sách
+        for other_user in $(grep -v "^$user" /data/usr.txt)
+        do
+            setfacl -m u:"$other_user":rwx "/data/$user"
+        done
+    fi
+    
+    # Kiểm tra ngày tối đa phải thay đổi mật khẩu
+    max_pwd_date=$(chage -l "$user" | grep "Maximum Password Age" | cut -d: -f2)
+    if [ "$max_pwd_date" == " 3000/01/01" ]; then
+        echo "Ngày tối đa $user cần thay đổi mật khẩu là không giới hạn."
+    fi
+done
