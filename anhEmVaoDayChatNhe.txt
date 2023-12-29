@@ -2,3 +2,4 @@ Khanh :hello
 Khanh : djt me cau C bai 1 lam the nao the Quy :v
 Quy : Đm anh em vào cái file shell_2024.txt nhé
 Khanh : M test ok roi dung khong Quy
+Khanh : xem bai 2 t viet nhu kia dc khong
