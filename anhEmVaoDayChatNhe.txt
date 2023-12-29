@@ -8,3 +8,4 @@ Khanh : câu 1 D nó cho ngày 1/1/3000 không dùng tới à :)
 Quy : Chờ tí đang cập nhật lại nó viết sai.
 Quy : Ok cập nhật rồi nhé trong cái Cập nhật bài shell.txt
 Khanh : tìm cách test đi e t cho vào nó báo setfacl not found :v
+Quy : M tạo set user theo hết hạn á rồi chạy file đấy nó ra mà.
