@@ -4,4 +4,4 @@ Quy : Đm anh em vào cái file shell_2024.txt nhé
 Khanh : M test ok roi dung khong Quy
 Khanh : xem bai 2 t viet nhu kia dc khong
 Quy : M tự tets đi còn bài 2 thì t cập nhật cách cô chấm điểm rồi đấy
-
+Khanh : câu 1 D nó cho ngày 1/1/3000 không dùng tới à :)
